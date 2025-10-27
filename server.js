@@ -6,7 +6,6 @@ const OpenAI = require('openai');
 const app = express();
 const PORT = 3000;
 
-// OpenAI configuration
 const openai = new OpenAI({
   apiKey: '*hiddenforsecurityreasons'
 });
@@ -15,7 +14,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-// AI Chat endpoint
 app.post('/api/chat', async (req, res) => {
   try {
     const { message } = req.body;
@@ -52,12 +50,10 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({ status: 'online', service: 'Valyn Core' });
 });
 
-// AI Router endpoint
 app.post('/api/router', async (req, res) => {
   try {
     const { prompt, systemMessage } = req.body;
@@ -94,7 +90,6 @@ app.post('/api/router', async (req, res) => {
   }
 });
 
-// Image generation endpoint
 app.post('/api/generate-image', async (req, res) => {
   try {
     const { prompt } = req.body;
@@ -103,7 +98,6 @@ app.post('/api/generate-image', async (req, res) => {
       return res.status(400).json({ error: 'Prompt is required' });
     }
 
-    // Generate image using DALL-E 2 (more compatible, cheaper)
     const imageResponse = await openai.images.generate({
       model: "dall-e-2",
       prompt: prompt,
@@ -113,7 +107,6 @@ app.post('/api/generate-image', async (req, res) => {
 
     const imageUrl = imageResponse.data[0].url;
     
-    // Generate description of what was created
     const descriptionResponse = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -146,7 +139,6 @@ app.post('/api/generate-image', async (req, res) => {
   }
 });
 
-// Video generation endpoint (Sora)
 app.post('/api/generate-video', async (req, res) => {
   try {
     const { prompt } = req.body;
@@ -155,9 +147,6 @@ app.post('/api/generate-video', async (req, res) => {
       return res.status(400).json({ error: 'Prompt is required' });
     }
 
-    // Note: Sora API is not yet publicly available
-    // This will use the experimental endpoint when available
-    // For now, we'll generate a detailed video concept
     const descriptionResponse = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -190,7 +179,6 @@ app.post('/api/generate-video', async (req, res) => {
   }
 });
 
-// Serve HTML pages
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -211,7 +199,6 @@ app.get('/system', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'system.html'));
 });
 
-// Waitlist endpoint
 app.post('/api/waitlist', async (req, res) => {
   try {
     const { email, twitter } = req.body;
@@ -220,8 +207,6 @@ app.post('/api/waitlist', async (req, res) => {
       return res.status(400).json({ error: 'Email and Twitter username are required' });
     }
     
-    // Here you would normally save to a database
-    // For now, just log it
     console.log(`New waitlist signup: ${email} (@${twitter})`);
     
     res.json({ success: true, message: 'Successfully added to waitlist!' });
@@ -236,4 +221,5 @@ app.listen(PORT, () => {
   console.log(`📚 Docs available at http://localhost:${PORT}/docs`);
   console.log(`🤖 AI Chat endpoint: http://localhost:${PORT}/api/chat`);
 });
+
 
