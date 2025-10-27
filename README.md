@@ -1,6 +1,6 @@
 **AI-Powered Development Platform on x402 Protocol**
 
-[![Website](https://img.shields.io/badge/Website-valyncore.com-blue)](https://valyncore.net)
+[![Website](https://img.shields.io/badge/Website-valyncore.net-blue)](https://valyncore.net)
 [![Twitter](https://img.shields.io/badge/Twitter-@valyncore-1DA1F2)](https://x.com/valyncore)
 [![x402 Protocol](https://img.shields.io/badge/x402-Protocol-green)]((https://www.x402scan.com/composer/agent/0e97a119-c408-4b7d-a9da-3af5391df351/))
 
