@@ -84,7 +84,6 @@ const valyn = new ValynCore({
   apiKey: process.env.VALYN_API_KEY
 });
 
-// Enable x402 payments on your routes
 app.use('/premium', valyn.middleware({
   price: '0.01',
   token: 'USDC'
