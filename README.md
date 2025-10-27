@@ -252,7 +252,6 @@ Built on the open x402 protocol standard.
 
 ### Content Paywalls
 ```javascript
-// Charge per article view
 app.use('/articles/:id', valyn.middleware({
   price: '0.05',
   token: 'USDC'
@@ -261,7 +260,6 @@ app.use('/articles/:id', valyn.middleware({
 
 ### API Metering
 ```javascript
-// Different pricing per endpoint
 app.use(valyn.middleware({
   '/api/translate': { price: '0.01' },
   '/api/analyze': { price: '0.10' },
@@ -271,7 +269,6 @@ app.use(valyn.middleware({
 
 ### Autonomous AI Agents
 ```javascript
-// AI agent making autonomous payments
 const agent = new AIAgent({
   wallet: new ValynClient({
     privateKey: process.env.AGENT_KEY,
