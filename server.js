@@ -8,7 +8,7 @@ const PORT = 3000;
 
 // OpenAI configuration
 const openai = new OpenAI({
-  apiKey: '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'
+  apiKey: '*hiddenforsecurityreasons'
 });
 
 app.use(cors());
@@ -236,3 +236,4 @@ app.listen(PORT, () => {
   console.log(`📚 Docs available at http://localhost:${PORT}/docs`);
   console.log(`🤖 AI Chat endpoint: http://localhost:${PORT}/api/chat`);
 });
+
