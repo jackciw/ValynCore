@@ -2,7 +2,7 @@
 
 [![Website](https://img.shields.io/badge/Website-valyncore.net-blue)](https://valyncore.net)
 [![Twitter](https://img.shields.io/badge/Twitter-@valyncore-1DA1F2)](https://x.com/valyncore)
-[![x402 Protocol](https://img.shields.io/badge/x402-Protocol-green)]((https://www.x402scan.com/composer/agent/0e97a119-c408-4b7d-a9da-3af5391df351/))
+[![x402scanl](https://img.shields.io/badge/x402-Protocol-green)]((https://www.x402scan.com/composer/agent/0e97a119-c408-4b7d-a9da-3af5391df351/))
 
 Valyn Core is an AI development agent platform built on the x402 protocol, enabling instant, frictionless payments on BNB Smart Chain. Create code, websites, smart contracts, AI agents, and more through our integrated Router powered by GPT-3.5.
 
