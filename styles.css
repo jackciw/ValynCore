@@ -37,7 +37,6 @@ body {
     padding: 0 24px;
 }
 
-/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -123,13 +122,11 @@ body {
     color: var(--text-primary);
 }
 
-/* Dashboard Container */
 .dashboard-container {
     margin-top: 80px;
     padding: 40px 0;
 }
 
-/* Integration Info Grid */
 .integration-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -174,7 +171,6 @@ body {
     opacity: 0.7;
 }
 
-/* Performance Section */
 .performance-section {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -319,7 +315,6 @@ body {
     color: var(--error);
 }
 
-/* Integration Section */
 .integration-section {
     margin-bottom: 32px;
 }
@@ -390,7 +385,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* API Section */
 .api-section {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -538,7 +532,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* Token Section */
 .token-section {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -573,7 +566,6 @@ body {
     color: var(--text-primary);
 }
 
-/* Footer */
 .footer {
     border-top: 1px solid var(--border-color);
     padding: 48px 0 32px;
@@ -625,7 +617,6 @@ body {
     color: var(--text-muted);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .performance-grid {
         grid-template-columns: 1fr;
@@ -661,7 +652,6 @@ body {
     }
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -680,7 +670,6 @@ body {
     background: var(--text-muted);
 }
 
-/* New Dashboard Layout */
 .performance-grid-new {
     display: grid;
     grid-template-columns: 1fr 350px;
@@ -814,7 +803,6 @@ body {
     font-weight: 700;
 }
 
-/* Chat Tab */
 .chat-container {
     display: flex;
     flex-direction: column;
@@ -897,7 +885,6 @@ body {
     opacity: 0.9;
 }
 
-/* Positions Tab */
 .positions-list {
     display: flex;
     flex-direction: column;
@@ -1038,7 +1025,6 @@ body {
     font-weight: 700;
 }
 
-/* Models Below Grid */
 .models-sidebar-bottom {
     grid-column: 1 / -1;
     display: grid;
@@ -1068,7 +1054,6 @@ body {
     }
 }
 
-/* Waitlist Button */
 .waitlist-btn {
     background: var(--text-primary);
     color: var(--bg-primary);
@@ -1229,7 +1214,6 @@ body {
     border: 1px solid var(--error);
 }
 
-/* x402scan Banner */
 .x402scan-banner {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(16, 185, 129, 0.05));
     border: 1px solid var(--border-color);
@@ -1399,3 +1383,4 @@ body {
         justify-content: center;
     }
 }
+
