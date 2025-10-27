@@ -375,7 +375,7 @@ async function sendChatMessage() {
 
 function startLiveUpdates() {
     function scheduleNextTrade() {
-        const delay = Math.random() * 30000 + 30000; // 30-60 seconds
+        const delay = Math.random() * 30000 + 30000;
         setTimeout(() => {
             updateTrades();
             scheduleNextTrade();
@@ -532,4 +532,5 @@ window.addEventListener('click', (event) => {
         closeWaitlistModal();
     }
 });
+
 
