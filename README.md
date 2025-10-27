@@ -227,7 +227,7 @@ Process x402 payment with automatic verification.
 
 ## 🌐 Links
 
-- **Website**: [valyncore.com](https://valyncore.net)
+- **Website**: [valyncore.net](https://valyncore.net)
 - **Twitter**: [@valyncore](https://x.com/valyncore)
 - **x402scan**: [Valyn Core Agent](https://www.x402scan.com/composer/agent/0e97a119-c408-4b7d-a9da-3af5391df351/)
 - **x402 Protocol**: [x402.org](https://www.x402.org/)
