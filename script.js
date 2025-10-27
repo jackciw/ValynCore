@@ -1,4 +1,3 @@
-// Performance Chart
 let performanceChart = null;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -158,7 +157,6 @@ function generateChartData(range) {
             labels.push(date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
         }
         
-        // Simulate model performance in $10-$20 range
         gpt4Value += (Math.random() - 0.5) * 0.8;
         claudeValue += (Math.random() - 0.5) * 0.7;
         geminiValue += (Math.random() - 0.5) * 0.6;
@@ -230,7 +228,6 @@ function highlightModel(model) {
 }
 
 function updateStats() {
-    // Simulate real-time stats updates
     const totalValue = document.getElementById('totalValue');
     const volume24h = document.getElementById('volume24h');
     
@@ -265,7 +262,6 @@ function easeOutQuart(x) {
     return 1 - Math.pow(1 - x, 4);
 }
 
-// Copy API code function
 function copyAPICode() {
     const code = document.getElementById('apiCode');
     if (!code) return;
@@ -284,7 +280,6 @@ function copyAPICode() {
     });
 }
 
-// Update navigation active state
 const currentPath = window.location.pathname;
 document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
@@ -295,7 +290,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     }
 });
 
-// Tab switching functionality
 document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.sidebar-tab');
     const panes = document.querySelectorAll('.tab-pane');
@@ -304,11 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('click', () => {
             const targetTab = tab.dataset.tab;
             
-            // Update active tab
             tabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
             
-            // Update active pane
             panes.forEach(pane => {
                 pane.classList.remove('active');
                 if (pane.id === targetTab + '-tab') {
@@ -318,7 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Initialize chat input handler
     const chatInput = document.getElementById('chatInput');
     if (chatInput) {
         chatInput.addEventListener('keypress', (e) => {
@@ -328,11 +319,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Start live updates
     startLiveUpdates();
 });
 
-// Chat functionality with new OpenAI key
 async function sendChatMessage() {
     const input = document.getElementById('chatInput');
     const messages = document.getElementById('chatMessages');
@@ -340,7 +329,6 @@ async function sendChatMessage() {
     const message = input.value.trim();
     if (!message) return;
     
-    // Add user message
     const userMsg = document.createElement('div');
     userMsg.className = 'chat-message user';
     userMsg.innerHTML = `<div class="message-content">${message}</div>`;
@@ -349,7 +337,6 @@ async function sendChatMessage() {
     input.value = '';
     messages.scrollTop = messages.scrollHeight;
     
-    // Show typing indicator
     const typingMsg = document.createElement('div');
     typingMsg.className = 'chat-message assistant';
     typingMsg.id = 'typing-indicator';
@@ -368,10 +355,8 @@ async function sendChatMessage() {
         
         const data = await response.json();
         
-        // Remove typing indicator
         typingMsg.remove();
         
-        // Add AI response
         const aiMsg = document.createElement('div');
         aiMsg.className = 'chat-message assistant';
         aiMsg.innerHTML = `<div class="message-content"><strong>Valyn AI:</strong> ${data.reply}</div>`;
@@ -388,9 +373,7 @@ async function sendChatMessage() {
     }
 }
 
-// Live data updates
 function startLiveUpdates() {
-    // Update trades every 30-60 seconds (randomly)
     function scheduleNextTrade() {
         const delay = Math.random() * 30000 + 30000; // 30-60 seconds
         setTimeout(() => {
@@ -400,7 +383,6 @@ function startLiveUpdates() {
     }
     scheduleNextTrade();
     
-    // Update stats every 2 seconds
     setInterval(updateLiveStats, 2000);
 }
 
@@ -411,10 +393,9 @@ function updateTrades() {
     const models = ['GPT-4', 'Claude 3.5', 'Gemini Pro', 'DeepSeek'];
     const actions = ['buy', 'sell'];
     
-    // Generate random trade in $0.10-$2.00 range
     const model = models[Math.floor(Math.random() * models.length)];
     const action = actions[Math.floor(Math.random() * actions.length)];
-    const amount = (Math.random() * 1.90 + 0.10).toFixed(2); // $0.10-$2.00 range
+    const amount = (Math.random() * 1.90 + 0.10).toFixed(2);
     
     const tradeItem = document.createElement('div');
     tradeItem.className = 'trade-item';
@@ -432,18 +413,15 @@ function updateTrades() {
     
     tradesList.insertBefore(tradeItem, tradesList.firstChild);
     
-    // Fade in
     setTimeout(() => {
         tradeItem.style.transition = 'opacity 0.3s ease';
         tradeItem.style.opacity = '1';
     }, 10);
     
-    // Keep only last 10 trades
     while (tradesList.children.length > 10) {
         tradesList.removeChild(tradesList.lastChild);
     }
     
-    // Update time stamps
     updateTimeStamps();
 }
 
@@ -484,7 +462,6 @@ function updateLiveStats() {
     }
 }
 
-// Waitlist Modal Functions
 function openWaitlistModal() {
     const modal = document.getElementById('waitlistModal');
     if (modal) {
@@ -497,7 +474,6 @@ function closeWaitlistModal() {
     if (modal) {
         modal.classList.remove('active');
     }
-    // Reset form
     const form = document.getElementById('waitlistForm');
     const message = document.getElementById('waitlistMessage');
     if (form) form.reset();
@@ -515,7 +491,6 @@ async function submitWaitlist(event) {
     const submitBtn = event.target.querySelector('.submit-btn');
     const message = document.getElementById('waitlistMessage');
     
-    // Disable submit button
     submitBtn.disabled = true;
     submitBtn.textContent = 'Joining...';
     
@@ -535,7 +510,6 @@ async function submitWaitlist(event) {
             message.classList.add('success');
             message.textContent = data.message || 'Successfully added to waitlist!';
             
-            // Close modal after 2 seconds
             setTimeout(() => {
                 closeWaitlistModal();
             }, 2000);
@@ -552,10 +526,10 @@ async function submitWaitlist(event) {
     }
 }
 
-// Close modal when clicking outside
 window.addEventListener('click', (event) => {
     const modal = document.getElementById('waitlistModal');
     if (event.target === modal) {
         closeWaitlistModal();
     }
 });
+
