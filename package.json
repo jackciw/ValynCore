@@ -1,0 +1,19 @@
+{
+  "name": "valyn-core",
+  "version": "1.0.0",
+  "description": "Valyn Core - x402 Protocol Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["x402", "payments", "blockchain", "ai"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "openai": "^4.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  }
+}
